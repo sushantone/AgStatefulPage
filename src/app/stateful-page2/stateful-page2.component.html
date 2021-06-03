@@ -1,15 +1,15 @@
-<h1>Stateful Page Works!</h1>
+<h1>Stateful Page2 Works!</h1>
 <p>This page will maintain the state when you navigate away and comeback again</p>
-<p>This is approach 1, where state is directly used in html view. Notice "pageState" in html code. </p><p>Refresh the page or navigate back from other page to see page status maintained.</p>
-
+<p>This is approach 2, where html view is not touched, and only .ts is modified.</p><p>Refresh the page or navigate back from other page to see page status maintained.</p>
+<p>Notice, nothing happens when you change from Author 3 to Author 2.</p>
 <h2>My Filters</h2>
 <h3>Author
-<select [(ngModel)]="pageState.selectedAuthor" (change)="onSearchCriteriaChanged()">
+<select [(ngModel)]="selectedAuthor" (change)="onAuthorChanged()">
     
     <option>Author 1</option>
     <option>Author 2</option>
     <option>Author 3</option>
-    <option>{{pageState.defaultAuthor}}</option>
+    <option>{{defaultAuthor}}</option>
     <option>Author 4</option>
     <option>Author 5</option>
     
@@ -17,10 +17,9 @@
 
 <h3>Quick Search 
 <input type=text 
-    [(ngModel)]="pageState.searchText" 
+    [(ngModel)]="searchText" 
     placeholder="enter quick search text" 
-    (change)="onSearchCriteriaChanged()" 
-    (input)="onSearchCriteriaChanged()"></h3>
+    (input)="onSearchInputChanged()"></h3>
 <hr/>
 <div *ngFor="let item of searchResult">
 

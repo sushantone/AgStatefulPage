@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StateComponent } from '../Core/StateComponent';
 import { IBlog } from '../Types/BlogQuery';
 import {AuthorService} from './../Services/AuthorService';
-import { StatefulPageState } from './statefulPageState';
+import { StatefulPageState } from '../States/statefulPageState';
 
 @Component({
   selector: 'app-stateful-page',

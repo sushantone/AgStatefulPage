@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { StatelessPageComponent } from './stateless-page/stateless-page.component';
 import { StatefulPageComponent } from './stateful-page/stateful-page.component';
+import { StatefulPage2Component } from './stateful-page2/stateful-page2.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StatelessPageComponent,
-    StatefulPageComponent
+    StatefulPageComponent,
+    StatefulPage2Component
   ],
   imports: [
     BrowserModule,
