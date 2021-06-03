@@ -44,8 +44,8 @@ export class StatefulPage2Component extends StateComponent<StatefulPageState> im
   
   applySearch() {
     
-    var  query  = { searchText: this.pageState.searchText, author: this.pageState.selectedAuthor }
-    if(query.author == this.pageState.defaultAuthor){
+    var  query  = { searchText: this.searchText, author: this.selectedAuthor }
+    if(query.author == this.defaultAuthor){
       query.author = '';
     }
     console.info(query);
