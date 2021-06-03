@@ -1,0 +1,29 @@
+<h1>Stateful Page Works!</h1>
+<p>This page will maintain the state when you navigate away and comeback again</p>
+
+<h2>My Filters</h2>
+<h3>Author
+<select [(ngModel)]="pageState.selectedAuthor" (change)="onSearchCriteriaChanged()">
+    
+    <option>Author 1</option>
+    <option>Author 2</option>
+    <option>Author 3</option>
+    <option>{{pageState.defaultAuthor}}</option>
+    <option>Author 4</option>
+    <option>Author 5</option>
+    
+</select></h3>
+
+<h3>Quick Search 
+<input type=text 
+    [(ngModel)]="pageState.searchText" 
+    placeholder="enter quick search text" 
+    (change)="onSearchCriteriaChanged()" 
+    (input)="onSearchCriteriaChanged()"></h3>
+<hr/>
+<div *ngFor="let item of searchResult">
+
+<h2>{{item.title}} - By {{item.author}}</h2>
+<p>{{item.content}}</p>
+<hr/>
+</div>
