@@ -21,11 +21,11 @@ export class StatefulPage2Component extends StateComponent<StatefulPageState> im
   }
 
   public onAuthorChanged(){
-    this.setState({ 'selectedAuthor': this.selectedAuthor});
+    this.setState({ selectedAuthor: this.selectedAuthor});
   }
 
   public onSearchInputChanged(){
-    this.setState({ 'searchText': this.searchText});
+    this.setState({ searchText: this.searchText});
   }
 
   onStateChanged(oldValues: Partial<StatefulPageState>, newValues: Partial<StatefulPageState>) {
