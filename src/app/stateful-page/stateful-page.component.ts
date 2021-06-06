@@ -11,6 +11,10 @@ import { StatefulPageState } from '../States/statefulPageState';
 })
 export class StatefulPageComponent extends StateComponent<StatefulPageState> implements OnInit {
 
+  onStateChanged(oldValues: Partial<StatefulPageState>, newValues: Partial<StatefulPageState>): void {
+    
+  }
+
   searchResult:IBlog[] = [];
 
   constructor(private authorService: AuthorService) { 

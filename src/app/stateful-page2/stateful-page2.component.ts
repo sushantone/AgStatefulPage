@@ -28,7 +28,7 @@ export class StatefulPage2Component extends StateComponent<StatefulPageState> im
     this.setState({ 'searchText': this.searchText});
   }
 
-  onStateChanged(oldValues: StatefulPageState & Partial<StatefulPageState>, newValues: Partial<StatefulPageState>) {
+  onStateChanged(oldValues: Partial<StatefulPageState>, newValues: Partial<StatefulPageState>) {
        console.info("oldValues: " + oldValues) ;
        console.info("newValues: " + newValues) ;
        if(oldValues.selectedAuthor == "Author 3" && newValues.selectedAuthor == "Author 2")

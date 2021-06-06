@@ -2,7 +2,7 @@ import { OnInit } from "@angular/core";
 import { BaseState, DefaultState } from "./BaseState";
 import { IStateStore } from "./IStateStore";
 import * as localStorageStateStore from './LocalStorageStateStore';
-export class StateComponent<TState extends BaseState>{
+export abstract class StateComponent<TState extends BaseState>{
 
     stateStore: IStateStore  = localStorageStateStore.default;
     pageState: TState ;
@@ -14,10 +14,11 @@ export class StateComponent<TState extends BaseState>{
 
     setState(newValues: Partial<TState>) {
         var oldValue = this.getOldValues(newValues);
-       Object.assign(this.pageState, newValues);
+        Object.assign(this.pageState, newValues);
         this.saveState();
         this.onStateChanged(oldValue, newValues);
     }
+
     getOldValues(newValues: Partial<TState>) : Partial<TState> {
         var oldValues = {} as Partial<TState>;
         for(var key of Object.keys(newValues)){
@@ -26,8 +27,7 @@ export class StateComponent<TState extends BaseState>{
         return oldValues as Partial<TState>
     }
 
-    onStateChanged(oldValues: Partial<TState>, newValues: Partial<TState>) {
-    }   
+    abstract onStateChanged(oldValues: Partial<TState>, newValues: Partial<TState>) : void;
 
     loadState() {
          var result = <TState>this.stateStore.loadState<TState>(this.GetStateName());
